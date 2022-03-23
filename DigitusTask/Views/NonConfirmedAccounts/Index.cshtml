@@ -1,0 +1,28 @@
+﻿@using DigitusTask.Models
+@model List<DigitusTask.Models.UserListViewModal>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Users Not Confirmed In 24 Hours</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>            
+            <th>Register Date</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>                
+                <td>@user.RegisterDate</td>   
+            </tr>
+        }
+    </tbody>
+</table>
